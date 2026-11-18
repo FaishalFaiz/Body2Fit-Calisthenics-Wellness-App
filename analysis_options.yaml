@@ -18,6 +18,12 @@ analyzer:
     - windows/**
     - macos/**
     - linux/**
+  errors:
+    # Flutter 3.50 menandai `package:flutter/material.dart` sebagai deprecated
+    # dan menyarankan `package:material_ui/material_ui.dart`, padahal paket
+    # tersebut belum tersedia di SDK yang terpasang. Dimatikan agar analisis
+    # tetap bersih sampai migrasi resmi tersedia.
+    deprecated_member_use: ignore
 
 linter:
   # The lint rules applied to this project can be customized in the
